@@ -1,0 +1,29 @@
+.barra-menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.barra-menu h1{
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 3px;
+}
+.menu a{
+    display: inline;
+    margin-right: 20px;
+
+}
+.menu a:hover{
+    color: yellow;
+    text-decoration: underline;
+}
+img.estudiante{
+    display: block;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
