@@ -19,6 +19,7 @@ function isValid(unAlumno){
 
     return validacion;
 }
+//registrar
 function registrar(){
     let inputNombre = document.getElementById("txtNombre").value;
     let inputEdad = document.getElementById("txtEdad").value;
@@ -29,15 +30,6 @@ function registrar(){
     }else{
         alert("Por favor completa los campos");
     }
-}
-
-//registrar
-function registrar(){
-    let inputNombre = document.getElementById("txtNombre").value;
-    let inputEdad = document.getElementById("txtEdad").value;
-    let nuevoAlumno = new Student(inputNombre,inputEdad);
-    students.push(nuevoAlumno);
-    console.log(students);
 }
 
 function init(){
