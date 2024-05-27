@@ -24,6 +24,7 @@ function registrar(){
     let inputNombre = document.getElementById("txtNombre").value;
     let inputEdad = document.getElementById("txtEdad").value;
     let nuevoAlumno = new Student(inputNombre,inputEdad);
+    
     if(isValid(nuevoAlumno)){
         students.push(nuevoAlumno);
         console.log(students);

@@ -27,6 +27,13 @@ img.estudiante{
     margin-left: auto;
     margin-right: auto;
 }
-.resgistro1 div{
+.resgistro1{
+    margin-top: 80px;
+    margin-inline-start: 50px;
+    margin-block-end: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
     
 }
