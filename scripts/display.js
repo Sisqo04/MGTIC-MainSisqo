@@ -8,14 +8,19 @@ function displayCards(){
             <h4> Nombre: ${student.name}</h4>
             <p> Edad: ${student.age}</p>
             <p> Genero: ${student.genero}</p>
-            <p> Facultad: ${student.facultad}</p>
             <p> Email: ${student.email}</p>
-            <p> Matematicas: ${student.matematicas}</p>
-            <p> Quimica: ${student.quimica}</p>
+            <p> Facultad: ${student.facultad}</p>
+            <p> Password: ${student.password}</p>
+            <p> Matematicas: ${student.materia1}</p>
+            <p> Quimica: ${student.materia2}</p>
+            <p> Fisica: ${student.materia3}</p>
             <button>Eliminar</button>
         
         </div>
         `;
     }
     document.getElementById("studentList").innerHTML=card;
+}
+function displayTable(){
+
 }

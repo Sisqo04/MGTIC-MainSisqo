@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/base.css">
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/display.css">
+    
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="barra-menu">
+            <h1>Sistema de registro</h1>
+
+        <nav class="menu">
+            <a href="index.html">Inicio</a>
+            <a href="projects.html">Proyectos</a>
+            <a href="articles.html">Articulos</a>
+            <a href="contacto.html">Contacto</a>
+        
+        </nav>
+        
+        </div>
+    </header>
+
+    <main class="container">
+        <h3>Registra un alumno nuevo</h3>
+        <div>
+            <div>
+                <label>Nombre:</label>
+                <input type="text" id="txtNombre">
+            </div>
+            <div>
+                <label>Edad:</label>
+                <input type="number" id="txtEdad">
+            </div>
+            <div>
+                <label for="opcion-genero">Genero:</label>
+
+            <select name="Genero" id="txtGenero">
+                <!-- <input type="text" id="txtGenero"> -->
+                <option value="">Selecciona una opcion</option>
+                <option value="M">Femenino</option>
+                <option value="H">Masculino</option>
+            </select>
+            </div>
+            <div>
+                <label>Email:</label>
+                <input type="text" id="txtEmail">
+            </div>
+            <div>
+                <label>Facultad:</label>
+
+                    <select id="txtFacultad">
+                    <!-- <select input="text" id="txtFacultad"></select> -->   
+                    <option value=""> Selecciona una opcion </option>
+                    <option value="fca">Facultad de Ciencias Adminstrativas</option>
+                    <option value="fch">Facultad de Ciencias Humanas</option>
+                    <option value="fdi">Facultad de Ingenieria</option>
+                </select>
+            </div>
+            <div>
+                <label>Password:</label>
+                <input type="password" id="txtPassword">
+            </div>
+            <div>
+                <label>Matematicas:</label>
+                <input type="number" id="numMateria1">
+            </div>
+            <div>
+                <label>Quimica:</label>
+                <input type="number" id="numMateria2">
+            </div>
+            <div>
+                <label>Fisica:</label>
+                <input type="number" id="numMateria3">
+            </div>
+
+            <button onclick="registrar()">Registrar</button>
+        </div>
+
+        <h3>Estudiantes registrados</h3>
+        <div id="studentList"></div>
+    
+    </main>
+
+     <script src="./scripts/register.js"></script>
+    <script src="./scripts/display.js"></script>
+</body>
+</html>
+<!--Crear un formulario con los elementos nombre,edad,genero,email,facultad,password,materia1,materia2,materia3-->
+<!--Que facultad sea un select con 3 opciones-->
