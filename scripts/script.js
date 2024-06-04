@@ -33,8 +33,8 @@ console.log(student1,student2);
 
 //objeto contructor
 function Student(n,a,s){
-    this.name=n;
-    this.age=a;
+    this.nombre=n;
+    this.edad=a;
     this.isStudent=s;
 }
 

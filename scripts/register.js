@@ -9,8 +9,8 @@ function Student(nombre,edad,genero,email,facultad,password,materia1,materia2,ma
     this.facultad=facultad;
     this.password=password;
     this.materia1=materia1;    
-    this.mteria2=materia2;
-    this.mteria3=materia3;
+    this.materia2=materia2;
+    this.materia3=materia3;
 }
 
 //validación
@@ -61,8 +61,9 @@ function registrar(){
     let nuevoAlumno = new Student(inputNombre,inputEdad,inputGenero,inputEmail,inputFacultad,inputPassword,inputMateria1,inputMateria2,inputMateria3); 
     
     if(isValid(nuevoAlumno)==true){
-        students.push(nuevoAlumno);
+       // students.push(nuevoAlumno);
         /* console.log(students); */
+        insertToDataBase(nuevoAlumno);
         displayCards();
         alert("Informacion Registrada");
         //limpiarCampos();
@@ -71,6 +72,33 @@ function registrar(){
     } 
 }
 
+function insertToDataBase(newStudent){
+    $.ajax({
+       url:"./app/register.php",
+       method:"POST",
+       data:{
+           name:newStudent.nombre,
+           edad:newStudent.edad,
+           genero:newStudent.genero,
+           email:newStudent.email,
+           facultad:newStudent.facultad,
+           password:newStudent.password,
+           materia1:newStudent.materia1,
+           materia2:newStudent.materia2,
+           materia3:newStudent.materia3
+       }, 
+       dataType:"json",
+       success:function(response){
+        console.log(response);
+
+       },
+       error:function(xhr,status,error){
+        console.log("Error de conexión");
+        //console.error(error);
+
+       }
+    });
+}
 function init(){
     let student1 = new Student("Samuel",99,"Masculino","samuel@gmail.com","Ingenieria","123456",90,85,100);
     students.push(student1);

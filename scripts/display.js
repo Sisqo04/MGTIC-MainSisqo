@@ -5,8 +5,8 @@ function displayCards(){
         let student=students[i];
         card+=`
         <div class='student'>
-            <h4> Nombre: ${student.name}</h4>
-            <p> Edad: ${student.age}</p>
+            <h4> Nombre: ${student.nombre}</h4>
+            <p> Edad: ${student.edad}</p>
             <p> Genero: ${student.genero}</p>
             <p> Email: ${student.email}</p>
             <p> Facultad: ${student.facultad}</p>
