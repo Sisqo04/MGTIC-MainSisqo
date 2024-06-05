@@ -1,25 +1,20 @@
 <?php
 
-$serverName="localhost";
+$serverName = "localhost";
 
-$userName="root";
+$userName = "root";
 
-$password=""; 
+$password = "";
 
-$dbName="sistema_escolar";
+$dbName = "sistema_escolar";
 
- 
 
-$conn = new mysqli($serverName,$userName,$password,$dbName);
 
- 
+$conn = new mysqli($serverName, $userName, $password, $dbName);
 
-if($conn->connect_error){
 
-    die("Error de conexión:". $conn->connect_error);
 
- 
+if ($conn->connect_error) {
 
+    die("Error de conexión:" . $conn->connect_error);
 }
-
-?>

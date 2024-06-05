@@ -1,94 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/base.css">
-    <link rel="stylesheet" href="./styles/index.css">
-    <link rel="stylesheet" href="./styles/display.css">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/base.css" />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="stylesheet" href="./styles/display.css" />
+
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <div class="barra-menu">
-            <h1>Sistema de registro</h1>
+      <div class="barra-menu">
+        <h1>Sistema de registro</h1>
 
         <nav class="menu">
-            <a href="index.html">Inicio</a>
-            <a href="projects.html">Proyectos</a>
-            <a href="facultades.html">Facultades</a>
-            <a href="contacto.html">Contacto</a>
-        
+          <a href="index.html">Inicio</a>
+          <a href="projects.html">Proyectos</a>
+          <a href="facultades.html">Facultades</a>
+          <a href="contacto.html">Contacto</a>
         </nav>
-        
-        </div>
+      </div>
     </header>
 
     <main class="container">
-        <h3>Registra un alumno nuevo</h3>
-        <div>
-            <div>
-                <label>Nombre:</label>
-                <input type="text" id="txtNombre">
-            </div>
-            <div>
-                <label>Edad:</label>
-                <input type="number" id="txtEdad">
-            </div>
-            <div>
-                <label for="opcion-genero">Genero:</label>
-
-            <select name="Genero" id="txtGenero">
-                <!-- <input type="text" id="txtGenero"> -->
-                <option value="">Selecciona una opcion</option>
-                <option value="M">Femenino</option>
-                <option value="H">Masculino</option>
-            </select>
-            </div>
-            <div>
-                <label>Email:</label>
-                <input type="text" id="txtEmail">
-            </div>
-            <div>
-                <label>Facultad:</label>
-
-                    <select id="txtFacultad">
-                    <!-- <select input="text" id="txtFacultad"></select> -->   
-                    <option value=""> Selecciona una opcion </option>
-                    <option value="fca">Facultad de Ciencias Adminstrativas</option>
-                    <option value="fch">Facultad de Ciencias Humanas</option>
-                    <option value="fdi">Facultad de Ingenieria</option>
-                </select>
-            </div>
-            <div>
-                <label>Password:</label>
-                <input type="password" id="txtPassword">
-            </div>
-            <div>
-                <label>Matematicas:</label>
-                <input type="number" id="numMateria1">
-            </div>
-            <div>
-                <label>Quimica:</label>
-                <input type="number" id="numMateria2">
-            </div>
-            <div>
-                <label>Fisica:</label>
-                <input type="number" id="numMateria3">
-            </div>
-
-            <button onclick="registrar()">Registrar</button>
+      <h3>Registra un alumno nuevo</h3>
+      <div class="form-container">
+        <div class="form-input-container">
+          <label class="form-input-label">Nombre:</label>
+          <input type="text" id="txtNombre" class="form-input" />
+        </div>
+        <div class="form-input-container">
+          <label class="form-input-label">Edad:</label>
+          <input type="number" id="txtEdad" class="form-input" />
+        </div>
+        <div class="form-input-container">
+          <label for="opcion-genero">Genero:</label>
+          <select name="Genero" id="txtGenero" class="form-input">
+            <option value="" hidden selected>Selecciona una opcion</option>
+            <option value="M">Femenino</option>
+            <option value="H">Masculino</option>
+          </select>
+        </div>
+        <div class="form-input-container">
+          <label class="form-input-label">Email:</label>
+          <input type="text" id="txtEmail" class="form-input" />
+        </div>
+        <div class="form-input-container">
+          <label class="form-input-label">Facultad:</label>
+          <select id="txtFacultad" class="form-input">
+            <option value="" hidden selected>Selecciona una opcion</option>
+            <option value="fca">Facultad de Ciencias Adminstrativas</option>
+            <option value="fch">Facultad de Ciencias Humanas</option>
+            <option value="fdi">Facultad de Ingenieria</option>
+          </select>
+        </div>
+        <div class="form-input-container">
+          <label class="form-input-label">Password:</label>
+          <input type="password" id="txtPassword" class="form-input" />
+        </div>
+        <div class="form-input-container">
+          <label class="form-input-label">Matematicas:</label>
+          <input type="number" id="numMateria1" class="form-input" />
+        </div>
+        <div class="form-input-container">
+          <label class="form-input-label">Quimica:</label>
+          <input type="number" id="numMateria2" class="form-input" />
+        </div>
+        <div class="form-input-container">
+          <label class="form-input-label">Fisica:</label>
+          <input type="number" id="numMateria3" class="form-input" />
         </div>
 
-        <h3>Estudiantes registrados</h3>
-        <div id="studentList"></div>
-    
+        <button type="button" class="form-button" onclick="registrar()">
+          Registrar
+        </button>
+      </div>
+
+      <h3>Estudiantes registrados</h3>
+      <div class="search-container">
+        <input
+          class="form-input"
+          type="search"
+          id="search"
+          placeholder="Buscar estudiante por nombre"
+        />
+        <span id="total-students">0 estudiantes registrados</span>
+      </div>
+      <div id="studentList"></div>
     </main>
-     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>   
-     <script src="./scripts/register.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="./scripts/register.js"></script>
     <script src="./scripts/display.js"></script>
-</body>
+  </body>
 </html>
 <!--Crear un formulario con los elementos nombre,edad,genero,email,facultad,password,materia1,materia2,materia3-->
 <!--Que facultad sea un select con 3 opciones-->

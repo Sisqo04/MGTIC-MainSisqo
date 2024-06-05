@@ -17,9 +17,9 @@ header("Access-Control-Allow-Headers: Content-Type, Authorization");
 
 include("conection.php");
 
-if($_SERVER["REQUEST_METHOD"] == "POST"){
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    if(isset($_POST["nombre"],$_POST["edad"],$_POST["genero"],$_POST["email"],$_POST["facultad"],$_POST["password"],$_POST["materia1"],$_POST["materia2"],$_POST["materia3"])){
+    if (isset($_POST["nombre"], $_POST["edad"], $_POST["genero"], $_POST["email"], $_POST["facultad"], $_POST["password"], $_POST["materia1"], $_POST["materia2"], $_POST["materia3"])) {
         $nombre = $_POST["nombre"];
         $edad = $_POST["edad"];
         $genero = $_POST["genero"];
@@ -29,17 +29,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $materia1 = $_POST["materia1"];
         $materia2 = $_POST["materia2"];
         $materia3 = $_POST["materia3"];
-        
-        $stmt_insert_usuarios =$conn->prepare("INSERT INTO estudiantes (nombre,edad,genero,email,facultad,password,materia1,materia2,materia3) VALUES (?,?,?,?,?,?,?,?,?)");
-        $stmt_insert_usuarios->bind_param("sissssiii",$nombre,$edad,$genero,$email,$facultad,$password,$materia1,$materia2,$materia3);
+
+        $stmt_insert_usuarios = $conn->prepare("INSERT INTO estudiantes (nombre,edad,genero,email,facultad,password,mat1,mat2,mat3) VALUES (?,?,?,?,?,?,?,?,?)");
+        $stmt_insert_usuarios->bind_param("sissssiii", $nombre, $edad, $genero, $email, $facultad, $password, $materia1, $materia2, $materia3);
         $stmt_insert_usuarios->execute();
 
-        echo json_encode(array("success" =>true));
+        echo json_encode(array("success" => true));
         $stmt_insert_usuarios->close();
     }
 
     $conn->close();
     exit();
-
-}    
-?>
+}
